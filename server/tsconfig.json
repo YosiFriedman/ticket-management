@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "CommonJS",
+    "rootDir": "./src",   // Change root directory
+    "outDir": "./dist",   // Output compiled files to /dist
+    "strict": true,
+    "esModuleInterop": true
+  }
+}
