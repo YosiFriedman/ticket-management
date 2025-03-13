@@ -3,6 +3,8 @@ import axios from "axios";
 import { Ticket } from "../types/Ticket";
 import { UserType } from "../types/UserType";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:4000";
+
 export const useTickets = (userType: UserType) => {
   const [tickets, setTickets] = useState<Ticket[]>([]);
   const [loading, setLoading] = useState(true);
@@ -15,7 +17,7 @@ export const useTickets = (userType: UserType) => {
     const fetchTickets = async () => {
       try {
         setLoading(true);
-        const { data } = await axios.get(`http://localhost:4000/api/tickets`, {
+        const { data } = await axios.get(`${API_URL}/api/tickets`, {
           params: { userType, page, limit },
         });
 
